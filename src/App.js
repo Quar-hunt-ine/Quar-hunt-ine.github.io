@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import HomePage from './components/HomePage'
 import Instructions from './components/Instructions'
 import NavBar from './components/NavBar'
@@ -8,7 +8,7 @@ import Winner from './components/Winner'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <NavBar/>
       <Switch>
         <Route exact path="/">
@@ -24,7 +24,7 @@ const App = () => {
           <Winner/>
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
