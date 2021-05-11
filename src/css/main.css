@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+
+body {
+    font-family: 'Reggae One', cursive;
+    background-image: url('../img/background.jpg');
+    /* background-position: center; */
+    background-size: cover;
+    color: #502c0a;
+    /* background-repeat: no-repeat; */
+}
+
+.nav-bar img {
+    height: 50px;
+    width: auto;
+}
+
+.homepage {
+    height: 100vh;
+    position: relative;
+}
+
+.question-page {
+    height: 100vh;
+    position: relative;
+}
+
+.homepage h1 {
+    text-align: center;
+}
+
+.question-page h1 {
+    text-align: center;
+}
+
+.question-page img {
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+}
+
+.winner-page {
+    height: 100vh;
+    position: relative;
+}
+
+.winner-page h1 {
+    text-align: center;
+}
+
+.MuiContainer-root {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
