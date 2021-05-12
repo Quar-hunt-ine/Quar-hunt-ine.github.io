@@ -1,7 +1,7 @@
 const instructions = [
     {
         id: 1,
-        text: "All the answers of the treasure hunt have to be written in lower case without any space.",
+        text: "All the answers of the treasure hunt have to be written in lower case without any space (For example if the answer is James Bond 007, write it as jamesbond007)",
     },
     {
         id: 2,
@@ -9,7 +9,7 @@ const instructions = [
     },
     {
         id: 3,
-        text: "There are 16 questions in the Treasure Hunt. The level of difficulty will increase as the participant clears each question.",
+        text: "There are 17 questions in the Treasure Hunt. The level of difficulty will increase as the participant clears each question.",
     },
     {
         id: 4,

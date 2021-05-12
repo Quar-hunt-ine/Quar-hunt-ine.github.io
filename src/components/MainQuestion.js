@@ -1,17 +1,14 @@
-import {Container, Grid} from '@material-ui/core';
-import Button from '@material-ui/core/Button';
+import { Button, Container, Grid } from '@material-ui/core'
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router';
-import instructions from '../data/Instructions';
-import warnings from '../data/warnings';
+import questions from '../data/questions';
 
 var CryptoJS = require("crypto-js");
-const inst = instructions;
-const wrngs = warnings;
+const main_question = questions[17];
 
-const Instructions = () => {
+const MainQuestion = () => {
 
-    const history = useHistory();
+    const history = useHistory()
 
     useEffect(() => {
 
@@ -34,38 +31,35 @@ const Instructions = () => {
 
     }, [history])
 
+    const startTest = async () => {
+        const SECRET_KEY = process.env.REACT_APP_SECRET_KEY
+        var cipher_text = CryptoJS.AES.encrypt("1", SECRET_KEY)
+        localStorage.setItem('questionId', cipher_text);
+        history.push('/question/1');
+    }
 
     return (
-        <div className="homepage">
+        <div className="home-page">
             <Container>
-                <h1>Instructions</h1>
+                <h1 style={{textAlign: 'center'}}>Main Question</h1>
                 <Grid container justify='center'>
                     <Grid item md={10}>
-                        {inst.map((item) => {
+                        {main_question.text.map((item) => {
                             return (
-                                <p key={item.id}>{item.id}. {item.text}</p>
+                                <p>{item}</p>
                             )
                         })}
-                    </Grid>
-                </Grid>
-
-                <h1>Warnings</h1>
-                <Grid container justify='center'>
-                    <Grid item md={10}>
-                        {wrngs.map((item) => {
-                            return (
-                                <p key={item.id}>{item.id}. {item.text}</p>
-                            )
-                        })}
+                        <p>To get the value of V and t you have to solve for the treasure and after you solve for the treasure, this question will reappear at the end with the missing values of V and t given.</p>
                     </Grid>
                 </Grid>
                 
                 <div style={{textAlign: 'center'}}>
-                    <Button variant="contained" onClick={() => (history.push('/main-question'))}>Next</Button>
+                    <Button variant="contained" onClick={startTest}>Start</Button>
                 </div>
+                
             </Container>
         </div>
     )
 }
 
-export default Instructions
+export default MainQuestion

@@ -1,6 +1,8 @@
 import { Button, Container, Grid, TextField } from '@material-ui/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
+
+var CryptoJS = require("crypto-js");
 
 const HomePage = () => {
 
@@ -11,6 +13,26 @@ const HomePage = () => {
     const [email2, setEmail2] = useState('')
 
     const history = useHistory();
+
+    useEffect(() => {
+        const cipher_text = localStorage.getItem('questionId')
+
+        if(cipher_text!==null) {
+            const SECRET_KEY = process.env.REACT_APP_SECRET_KEY;
+            const bytes = CryptoJS.AES.decrypt(cipher_text, SECRET_KEY)
+            const local_questionId = bytes.toString(CryptoJS.enc.Utf8)
+            
+            history.push(`/question/${local_questionId}`)
+        }
+        else {
+            const TeamName = localStorage.getItem('TeamName')
+            
+            if(TeamName!==null) {
+                history.push('/instructions')
+            }
+        }
+
+    }, [history])
 
     const Next = () => {
         if(!teamName || !name1 || !email1) {
