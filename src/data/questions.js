@@ -69,7 +69,11 @@ const questions = [
     },
     {
         id: 14,
-        text: ['Given F(x) = 3.13 - x^2 and xo = 0.3, apply one iteration of Gauss Seidel method to get answer ‘y’ upto 2 decimal places. If the last digit (after decimal) of y is n, then what is the nth word of the phrase in the meme below?'],
+        text: ['8x + 2y - 2z = 8',
+        'x - 8y + 3z = -4',
+        '2x + y + 9z = 12',
+        'Xo = (0,0,0)',
+        'Apply one approximation of Gauss Seidel method to get the answer of ‘z’ upto 2 decimal places. If the last digit (after decimal) of z is ‘n’, then what is the nth word of the phrase in the meme below?'],
         imgURL: '/assets/img/question14.png',
         answer: 'U2FsdGVkX18G0MZoxlXQEpVnnUjmq0n46S0n8xZZhXI=',
     },

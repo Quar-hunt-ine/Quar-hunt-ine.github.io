@@ -21,7 +21,8 @@ const NavBar = () => {
                 <h4 style={{marginLeft: '20px', marginRight: '20px'}}>Quar-hunt-ine</h4>
                 <img src="/assets/img/IE-Logo.png" style={{marginRight: 'auto'}} alt="ie-logo"/>
                 {/* <Timer/> */}
-                <Button onClick={Restart} variant="contained">Restart</Button>
+                {/* <Button onClick={Restart} variant="contained">Restart</Button> */}
+                <img src="/assets/img/NITK-Logo.png" alt="ie-logo"/>
             </Toolbar>
         </AppBar>
     )
